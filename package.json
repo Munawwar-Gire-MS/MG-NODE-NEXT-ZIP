@@ -1,0 +1,30 @@
+{
+  "name": "next-aes",
+  "version": "1.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:version": "next build",
+    "release:version": "standard-version",
+    "release-and-deploy": "pnpm release:version && git push --follow-tags origin main && pnpm build:version && git add . && git diff --quiet || git commit -m \"chore: build output\" && git push origin main && vercel --prod"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
+    "crypto-js": "^4.2.0",
+    "next": "15.4.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.3",
+    "standard-version": "^9.5.0"
+  }
+}

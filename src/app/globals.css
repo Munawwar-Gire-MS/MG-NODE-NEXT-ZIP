@@ -1,0 +1,117 @@
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root element */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --white: #fff;
+  --black: #101010;
+  --primary: #0d6efd;
+  --primary-2: #0d6efd;
+}
+
+section {
+  overflow-x: hidden !important;
+}
+
+.bg-primary-2 {
+  background-color: var(--primary-2);
+}
+
+.blue-pastel-1 {
+  background-color: #e6f3ff;
+}
+
+.btn-white {
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  border: 1px solid var(--white) !important;
+}
+
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+  background-color: var(--white) !important;
+  color: var(--primary-2) !important;
+  border: 1px solid var(--white) !important;
+}
+
+button,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.header-logo {
+  padding: 8px 10px;
+}
+
+/* ================== LOADING SCREEN SPINNER ==================== */
+.container-spinner {
+  --uib-size: 40px;
+  --uib-speed: 2s;
+  --uib-bg-opacity: 0;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  animation: rotate var(--uib-speed) linear infinite;
+  will-change: transform;
+  overflow: visible;
+}
+
+.car {
+  fill: none;
+  stroke: var(--primary);
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  fill: none;
+  stroke: var(--primary);
+  opacity: var(--uib-bg-opacity);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    stroke-dasharray: 0, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 75, 150;
+    stroke-dashoffset: -25;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+/* ========================== */
